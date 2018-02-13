@@ -8,11 +8,12 @@ import android.widget.ImageView;
  */
 
 public class Word {
-    private int mImageResourceId;
     // String values for Miwok and Default translations of the word
     private String mMiwokTranslation;
     private String mDefaultTranslation;
-    public static boolean mHasImage = false;
+    public static final int NO_IMAGE_PROVIDED = -1;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+    private int mSoundResourceId;
 
     /**
      * Create a new Word object.
@@ -21,10 +22,10 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int soundResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
-        mHasImage = false;
+        mSoundResourceId = soundResourceId;
     }
 
     /**
@@ -35,11 +36,11 @@ public class Word {
      * @param miwokTranslation is the word in the Miwok language
      * @param imageResourceId is an image to the words
      */
-    public Word(int imageResourceId, String defaultTranslation, String miwokTranslation) {
+    public Word(int imageResourceId, String defaultTranslation, String miwokTranslation, int soundResourceId) {
         mImageResourceId = imageResourceId;
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
-        mHasImage = true;
+        mSoundResourceId = soundResourceId;
     }
 
     /**
@@ -66,7 +67,24 @@ public class Word {
     /**
      * Get mHasImage state.
      */
-    public boolean gethasImageState() {
-        return  mHasImage;
+    public boolean hasImage() {
+        return mImageResourceId != -1;
+    }
+
+    /**
+     * Get the sound of the word.
+     */
+    public int getSoundResourceId() {
+        return  mSoundResourceId;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mImageResourceId=" + mImageResourceId +
+                ", mSoundResourceId=" + mSoundResourceId +
+                '}';
     }
 }
