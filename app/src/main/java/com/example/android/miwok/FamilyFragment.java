@@ -81,24 +81,28 @@ public class FamilyFragment extends Fragment {
 
         // Create a list of words
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word(R.drawable.color_red, "red", "weṭeṭṭi",
-                R.raw.color_red));
-        words.add(new Word(R.drawable.color_green, "green", "chokokki",
-                R.raw.color_green));
-        words.add(new Word(R.drawable.color_brown, "brown", "ṭakaakki",
-                R.raw.color_brown));
-        words.add(new Word(R.drawable.color_gray, "gray", "ṭopoppi",
-                R.raw.color_gray));
-        words.add(new Word(R.drawable.color_black, "black", "kululli",
-                R.raw.color_black));
-        words.add(new Word(R.drawable.color_white, "white", "kelelli",
-                R.raw.color_white));
-        words.add(new Word(R.drawable.color_dusty_yellow, "dusty yellow", "ṭopiisә",
-                R.raw.color_dusty_yellow));
-        words.add(new Word(R.drawable.color_mustard_yellow, "mustard yellow", "chiwiiṭә",
-                R.raw.color_mustard_yellow));
+        words.add(new Word(R.drawable.family_father,"father", "әpә",
+                R.raw.family_father));
+        words.add(new Word(R.drawable.family_mother,"mother", "әṭa",
+                R.raw.family_mother));
+        words.add(new Word(R.drawable.family_son,"son", "angsi",
+                R.raw.family_son));
+        words.add(new Word(R.drawable.family_daughter,"daughter", "tune",
+                R.raw.family_daughter));
+        words.add(new Word(R.drawable.family_older_brother,"older brother", "taachi",
+                R.raw.family_older_brother));
+        words.add(new Word(R.drawable.family_younger_brother,"younger brother", "chalitti",
+                R.raw.family_younger_brother));
+        words.add(new Word(R.drawable.family_older_sister,"older sister", "teṭe",
+                R.raw.family_older_sister));
+        words.add(new Word(R.drawable.family_younger_sister,"younger sister", "kolliti",
+                R.raw.family_younger_sister));
+        words.add(new Word(R.drawable.family_grandmother,"grandmother", "ama",
+                R.raw.family_grandmother));
+        words.add(new Word(R.drawable.family_grandfather,"grandfather", "paapa",
+                R.raw.family_grandfather));
 
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_colors);
+        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_family);
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
